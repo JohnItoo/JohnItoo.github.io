@@ -1,6 +1,10 @@
 ---
 layout: post
-title: Hello there
+title: Hello There
+author: John Ohue
+summary: Welcome
+comments: false
+image: images/john-ohue.jpeg
 ---
 
 {% include head.html %}

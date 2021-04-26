@@ -1,7 +1,12 @@
 ---
 layout: post
-title: No unique powers of 2
+title:  No Unique Powers of 2
+author: John Ohue
+summary: Trying to prove that no unique powers of 2 sum to give a power of 2
+comments: true
+image: images/john-ohue.jpeg
 ---
+
 
 {% include head.html %}
 
