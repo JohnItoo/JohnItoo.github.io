@@ -4,7 +4,7 @@ title:  Basic System Design Notes
 author: John Ohue
 summary: Notes for System Design - LLD
 comments: true
-image: images/systemdesign/old_uml.jpg
+image: images/systemdesign/old_uml.png
 ---
 
 {% include head.html %}
@@ -15,7 +15,7 @@ Just like my other notes, the information here can continue to grow.
 # Introduction
 
 <p align="center">
-    <img width="80%" src="{{ site.baseurl }}{% link images/systemdesign/old_uml.jpg %}">
+    <img width="80%" src="{{ site.baseurl }}{% link images/systemdesign/old_uml.png %}">
 </p>
 
 I found this UML diagram in one of my old hardcopy notes and decided to move my System Design scribblings online.
