@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hello There
+title: Hello There - Bye Bye Medium
 author: John Ohue
 summary: Welcome
 comments: false
