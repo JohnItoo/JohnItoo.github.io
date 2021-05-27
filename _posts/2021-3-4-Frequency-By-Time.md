@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Frequency By Time
+publish: true
 ---
 
 There is a technique to find the number of items in a system at any particular instance. Given the time of the entry of all items and the time of departure of these items, one can deduce the number of items at any time during the given period.

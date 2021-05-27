@@ -5,6 +5,7 @@ author: John Ohue
 summary: Notes for System Design - LLD
 comments: true
 image: images/systemdesign/old_uml.png
+publish : true
 ---
 
 {% include head.html %}

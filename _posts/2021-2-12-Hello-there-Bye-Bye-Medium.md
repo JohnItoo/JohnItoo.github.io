@@ -5,6 +5,7 @@ author: John Ohue
 summary: Welcome
 comments: false
 image: images/john-ohue.jpeg
+publish: true
 ---
 
 {% include head.html %}
