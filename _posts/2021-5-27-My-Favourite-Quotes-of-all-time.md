@@ -14,3 +14,7 @@ I am also interested in words and how they are said in such a way that you can c
 This list is from shows, rap lyrics, bible verses etc. 
 
 - If you are doing genuine shit from the heart, you don't put it on camera
+
+- My eyelids is like levees but my tearducts is like glaciers
+
+
