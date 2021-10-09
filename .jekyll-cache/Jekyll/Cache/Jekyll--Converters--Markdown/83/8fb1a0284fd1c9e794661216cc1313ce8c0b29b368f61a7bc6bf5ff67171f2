@@ -1,0 +1,33 @@
+I"Å<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+<!-- Twitter cards -->
+<meta name="twitter:site" content="@" />
+
+<meta name="twitter:creator" content="@John Ohue" />
+
+<meta name="twitter:title" content="Hello There - Bye Bye Medium" />
+
+<meta name="twitter:description" content="Welcome" />
+
+<meta name="twitter:card" content="summary_large_image" />
+
+<meta name="twitter:image" content="http://localhost:4000images/john-ohue.jpeg" />
+
+<!-- end of Twitter cards -->
+
+<p>I am also interested in words and how they are said in such a way that you can carry around for the rest of your life.</p>
+
+<p>This list is from shows, rap lyrics, bible verses etc.</p>
+
+<ul>
+  <li>
+    <p>If you are doing genuine shit from the heart, you don‚Äôt put it on camera</p>
+  </li>
+  <li>
+    <p>My eyelids is like levees but my tearducts is like glaciers</p>
+  </li>
+</ul>
+
+:ET

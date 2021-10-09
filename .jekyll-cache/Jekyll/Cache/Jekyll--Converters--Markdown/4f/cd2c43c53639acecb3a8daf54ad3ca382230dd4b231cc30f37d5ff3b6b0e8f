@@ -1,0 +1,56 @@
+I"�	<p>There is a technique to find the number of items in a system at any particular instance. Given the time of the entry of all items and the time of departure of these items, one can deduce the number of items at any time during the given period.</p>
+
+<h1 id="example-">Example :</h1>
+
+<p>Person 1 enters a building at 2pm and leaves the building at 4pm</p>
+
+<p>Person 2 enters a building at 3pm and leaves at 5pm</p>
+
+<p>… in the format Ei, Di, and Vi (where Vi = the value of people/items entering the system at Ei and leaving at Di)</p>
+
+<p>If you are given x unique time queries to find the number of people in the building at all those times, the Big-O complexity of a brute-force solution will be exponential O(max(Di) * Q) and given very large Qs, sometimes an algorithm based on this idea might not finish with reasonable time limits.</p>
+
+<p>There are 2 basic techniques that can be modified to solve a problem of this type.</p>
+
+<p>i) Current Sum technique</p>
+
+<p>ii) Simulation and Prefix Sum technique</p>
+
+<h1 id="current-sum">Current Sum</h1>
+
+<ul>
+  <li>
+    <p>There exists an array say, arr with its length of at least max(Di) (The last time someone left the building/system) and all its indexes initialized to 0.</p>
+  </li>
+  <li>
+    <p>Iterating over the queries modify the value of arr like so:</p>
+  </li>
+</ul>
+
+<p>arr[Ei]  +=  Vi and arr[Di] -= Vi (i.e at time Ei, Vi enters and at time Di, Vi leaves).</p>
+
+<ul>
+  <li>Go over arr once more. It is important to see that if arr[t] != 0  and arr[t+1] == 0, arr[t+1] should be equal to arr[t] because there was no entry and departure between times t and t+1.</li>
+</ul>
+
+<p>The time complexity of this is O(max(Di))</p>
+
+<h1 id="simulation-and-prefix-sum">Simulation and Prefix Sum</h1>
+
+<p>In this technique, you’d have a list of pairs say, building,  For each query, you will append two pairs to this list. i.e the {Ei, Vi} and {Di, -Vi}.</p>
+
+<p>You’d then sort this list of pairs by the first item i.e (time) in the pairs.</p>
+
+<p>Iterating over this list in one pass while keeping a variable of the current sum will help us deduce any information we might need.</p>
+
+<p>Related Problems.</p>
+
+<p><a href="https://codeforces.com/problemset/problem/1424/G">Years</a></p>
+
+<p><a href="https://cses.fi/problemset/task/1619">Restaurant Customer</a></p>
+
+<p><a href="https://atcoder.jp/contests/abc183/tasks/abc183_d">Water Heater</a></p>
+
+<p><a href="https://codeforces.com/problemset/problem/276/C">Little Girl and Maximum Sum</a></p>
+
+:ET

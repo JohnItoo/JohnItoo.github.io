@@ -1,0 +1,99 @@
+I"�<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+<!-- Twitter cards -->
+<meta name="twitter:site" content="@" />
+
+<meta name="twitter:creator" content="@John Ohue" />
+
+<meta name="twitter:title" content="Basic System Design Notes" />
+
+<meta name="twitter:description" content="Notes for System Design - LLD" />
+
+<meta name="twitter:card" content="summary_large_image" />
+
+<meta name="twitter:image" content="http://localhost:4000/images/systemdesign/old_uml.png" />
+
+<!-- end of Twitter cards -->
+
+<p>Just like my other notes, the information here can continue to grow.</p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p align="center">
+    <img width="80%" src="/images/systemdesign/old_uml.png" />
+</p>
+
+<p>I found this UML diagram in one of my old hardcopy notes and decided to move my System Design scribblings online.</p>
+
+<p>Generally, there are two tiers of System Design knowledge.</p>
+<ul>
+  <li>Low Level Design</li>
+  <li>High Level Design</li>
+</ul>
+
+<h2 id="low-level-design">Low-Level Design</h2>
+
+<p>In this context, Low Level Design (hereafter referred to as LLD), has to do with the structure or implementation of a particular system or a feature in a system. i.e How the various classes fit together etc.</p>
+
+<p>This is a great point to bring up UML Class diagrams as this is a good way to illustrate how classes/objects are related to each other in a system.</p>
+
+<p>I came across <a href="https://www.lucidchart.com/pages/uml-class-diagram">LucidChart</a> on Youtube a few years ago when I wanted to learn about UML. It turns out they also have a tool to draw UML diagrams. See in the reference section.</p>
+
+<h4> Points to note about UML Diagrams and Interaction of Objects OOP </h4>
+<p>.</p>
+
+<ul>
+  <li>
+    <p>Composition indicates that the <em>“composed”</em> cannot continue to exist without the <em>“composer”</em>. For instance, in an e-commerce system, if a Customer was destroyed/deleted (Composer), that customer’s shopping cart and orders will in a sense, cease to exist.</p>
+  </li>
+  <li>
+    <p>Composition is generally represented by a dark filled diamond besides the <em>composer</em> object with a line drawn to touching the <em>composed</em> object.</p>
+  </li>
+  <li>
+    <p>Composition is typically used to represent has a/many . i.e (1 - 1) vs (1 - 0…*)</p>
+  </li>
+  <li>
+    <p>A child class is usually looking up in form of a clear headed arrow to the parent class.</p>
+  </li>
+  <li>
+    <p>A class has three sections namely a) Class name b) Class properties usually private c) Class methods of different both visibility types</p>
+  </li>
+  <li>
+    <p>’-‘ infront of a property indicates it is private whereas ‘+’ signigies that it is public.</p>
+  </li>
+</ul>
+
+<h4> Notes about Java and Misc. </h4>
+
+<ul>
+  <li>An abstract class cannot be instatiated but can be subclassed.</li>
+  <li>An abstract class can have <b>0</b> to several abstract methods.</li>
+  <li>A non-abstract class cannot have abstract methods.</li>
+  <li>An abstract method is defined without a body like so :
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  public abstract int myMethod(int n1, int n2);
+</code></pre></div>    </div>
+  </li>
+  <li>In Java, a class has to implement all the methods of an interface except it is an abstract class</li>
+</ul>
+
+<h4> Notes about Swift </h4>
+
+<ul>
+  <li>Unlike in C++ where properties of structs are public whereas those of classes are private, in swift, structs are passed by value whereas classes are passed by reference (i.e the address in memory)</li>
+</ul>
+
+<h1 id="references">References</h1>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=UI6lqHOVHic">Lucid Chart’s UML Video</a></li>
+  <li><a href="https://www.lucidchart.com/pages/uml-class-diagram">Lucid Chart’s UML tool</a></li>
+  <li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html">Java Docs</a></li>
+</ul>
+
+<h1 id="note-to-reader">Note to reader:</h1>
+
+<p>It is not enough to regurgitate these points. It will be beneficial to know the how and why. Also this is not a Lucid Chart Advert dump.</p>
+<p>I'll scribble out High-Level System Design stuff in another note so that resource can grow as well</p>
+<p>.</p>
+:ET
