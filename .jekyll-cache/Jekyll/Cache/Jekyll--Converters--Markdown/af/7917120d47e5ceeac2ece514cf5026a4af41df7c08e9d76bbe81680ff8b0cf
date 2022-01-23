@@ -1,0 +1,119 @@
+I"C<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+<!-- Twitter cards -->
+<meta name="twitter:site" content="@" />
+
+<meta name="twitter:creator" content="@John Ohue" />
+
+<meta name="twitter:title" content="Solve 1 Modulo Congruency Problem" />
+
+<meta name="twitter:description" content="This is the most common form of modulo congruency in algorithm problems." />
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:image" content="" />
+
+<!-- end of Twitter cards -->
+
+<p><b> Statement </b></p>
+
+<p>When you have 2 numbers whose difference is divisible by m, then both numbers have the same modulo when divided by m.</p>
+
+<p>This is just the idea needed for some common modulo problems.
+For more insight see <a href="https://en.wikipedia.org/wiki/Modular_arithmetic#:~:text=Contents-,1,Congruence,-1.1">Wiki</a></p>
+
+<p><b> Related Problems </b></p>
+<ul>
+  <li><a href="https://codeforces.com/problemset/problem/876/B">Divisibility of Differences</a></li>
+  <li><a href="https://cses.fi/problemset/task/1662">Subarray Divisilibity</a></li>
+</ul>
+
+<p>One interesting problem where this idea is a subproblem and serves as an optimisation is Leetcode’s <a href="https://leetcode.com/problems/continuous-subarray-sum/">Continuous Subarray Sum</a> problem.</p>
+
+<p>A summary of the problem is: Given an array of numbers, check if there is a continuous subarray with more than one element and whose sum is a multiple of a given number k.</p>
+
+<p><b> How to think about this problem? </b></p>
+
+<p>Lets assume the length of the array is N, we want to find an optimal solution to this problem.</p>
+
+<p>A basic solution will be: for each element in the array, check if while moving to the right (and adding each element encountered), we get a sum divisible by k. This solution is an \(O(N^2)\) solution.</p>
+
+<p>Can we do better with the time complexity? I will go all Obama and say <i> yes we can! </i> Infact the time constraints on the problem statement shows us we need to do better.</p>
+
+<p><b> How to do better? </b></p>
+
+<p>We can change this to a prefix sum problem, i.e do what we are doing in the previous solution but with a prefix sum array. This in itself doesn’t optimise the solution. Infact, it is still an \(O(N^2)\) solution.</p>
+
+<p>Using Basic prefix sums. For each index in the prefix sum array we can check if a valid array ends here.</p>
+
+<p>For instance array:</p>
+
+<p>{23, 2, 4, 6, 7} will yield prefix sum array {0, 23, 25, 29, 35, 42}</p>
+
+<p>if we fix any two indexes i and j (i &lt; j) in our prefix array,
+We know that prefix[j] - prefix[i] will give us the sum of original array[i] to orginal array[j-1].</p>
+
+<p>So for every element we can find an array ending at this element, say at index j in O(N^2) by iterating i over the prefix sum array from the beginning and seeing if any sum will be divisible by K.</p>
+
+<p>This just shows that this is \(O(N^2)\).</p>
+
+<p><b> Optimization </b></p>
+
+<p>Since we know we are just looking for any element that appeared to the left of our current element that (prefix[j] - prefix[i]) % k == 0, we can use our lemma we stated above.</p>
+
+<p>In more formal terms:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>if (</td>
+      <td>a-b</td>
+      <td>) % k == 0 then a % k == b % k;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>With this knowledge we can create a modulo array and mod each element in our prefix Sum</p>
+
+<p>From the previous example our mod array will be</p>
+
+<p>{0 5 1 5 5 0}</p>
+
+<p>While traversing the array we can keep the first index we see any modulo value in say a hashmap. If we see the same modulo value and the distance is &gt;= 3 we have found an answer.</p>
+
+<p><b> C++ Code </b></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution {
+public:
+    bool checkSubarraySum(vector&lt;int&gt;&amp; nums, int k) {
+        int n = nums.size();
+        vector&lt;int&gt; prefixSum(n+1, 0);
+        for(int i = 1; i &lt;= n; i++) {
+            prefixSum[i] = prefixSum[i-1] + nums[i-1];
+        }
+        vector&lt;int&gt; mods(n+1, 0);
+        for(int i = 0; i &lt;= n; i++) {
+            mods[i] = prefixSum[i] % k;
+        }
+        unordered_map&lt;int, int&gt; seenModulos;
+        
+        for(int i = 0; i &lt;= n; i++) {
+            if(seenModulos.find(mods[i]) == seenModulos.end()) {
+                seenModulos[mods[i]] = i;
+                continue;
+            }
+            int firstOccurrenceIdx = seenModulos[mods[i]];
+            if(firstOccurrenceIdx &lt; i - 1) {
+                return true;
+            }
+        }
+        return false;
+        
+    }
+};
+
+</code></pre></div></div>
+<p>I originally solved this problem in June 2021, and wrote about it on Leetcode <a href="https://leetcode.com/problems/continuous-subarray-sum/discuss/1372238/number-theory-modulo-congruency-and-prefix-sums-on-c-code">here</a></p>
+:ET
