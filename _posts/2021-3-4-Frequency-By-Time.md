@@ -62,3 +62,5 @@ Related Problems.
 
 [Little Girl and Maximum Sum](https://codeforces.com/problemset/problem/276/C)
 
+[Number of Flowers in Full Bloom](https://leetcode.com/problems/number-of-flowers-in-full-bloom/)
+

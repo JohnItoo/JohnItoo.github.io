@@ -3,7 +3,7 @@ layout: post
 title:  Basic System Design Notes
 author: John Ohue
 summary: Notes for System Design - LLD
-comments: true
+comments: false
 image: /images/systemdesign/old_uml.png
 publish : true
 ---

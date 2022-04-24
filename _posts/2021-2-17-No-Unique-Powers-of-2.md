@@ -3,7 +3,7 @@ layout: post
 title:  No Unique Powers of Two
 author: John Ohue
 summary: Trying to prove that no unique powers of 2 sum to give a power of 2
-comments: true
+comments: false
 image: images/john-ohue.jpeg
 publish: true
 ---
